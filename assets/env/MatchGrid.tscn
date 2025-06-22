@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://0up1aiolmf35"]
+
+[ext_resource type="Script" uid="uid://b8wm522upxv7i" path="res://scripts/match_grid.gd" id="1_nxnnj"]
+
+[node name="MatchGrid" type="Node2D"]
+script = ExtResource("1_nxnnj")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://nafkxufpofiv"]
+
+[ext_resource type="PackedScene" uid="uid://0up1aiolmf35" path="res://assets/env/MatchGrid.tscn" id="1_elqb8"]
+
+[node name="Main" type="Node2D"]
+
+[node name="matchGrid" parent="." instance=ExtResource("1_elqb8")]
+position = Vector2(572, 330)
