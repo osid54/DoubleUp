@@ -21,7 +21,7 @@ GameData="*res://scripts/autoload/gameData.gd"
 
 [display]
 
-window/stretch/scale=2.0
+window/size/mode=2
 
 [file_customization]
 

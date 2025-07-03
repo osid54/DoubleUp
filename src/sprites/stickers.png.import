@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmcp4ilq4bodj"
-path="res://.godot/imported/fruitsColor.png-be95736dc3c8dac7da88472d45ac2923.ctex"
+uid="uid://c5mp81vje0rd6"
+path="res://.godot/imported/stickers.png-7c709b9dd8289441ca62e84b88b10685.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/sprites/fruitsColor.png"
-dest_files=["res://.godot/imported/fruitsColor.png-be95736dc3c8dac7da88472d45ac2923.ctex"]
+source_file="res://src/sprites/stickers.png"
+dest_files=["res://.godot/imported/stickers.png-7c709b9dd8289441ca62e84b88b10685.ctex"]
 
 [params]
 

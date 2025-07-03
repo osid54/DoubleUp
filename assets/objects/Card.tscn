@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ciw8vhnkkdxl7"]
+[gd_scene load_steps=8 format=3 uid="uid://ciw8vhnkkdxl7"]
 
 [ext_resource type="Script" uid="uid://b4ykhnwxy22mg" path="res://scripts/card.gd" id="1_yn1ki"]
 [ext_resource type="Texture2D" uid="uid://dno10iet0bqlu" path="res://src/sprites/cards.png" id="2_63gtx"]
-[ext_resource type="Texture2D" uid="uid://dmcp4ilq4bodj" path="res://src/sprites/fruitsColor.png" id="3_63gtx"]
+[ext_resource type="Texture2D" uid="uid://bcm2f3vrm3ehv" path="res://src/sprites/symbols.png" id="3_63gtx"]
+[ext_resource type="Texture2D" uid="uid://c5mp81vje0rd6" path="res://src/sprites/stickers.png" id="4_6xi4k"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_63gtx"]
 
@@ -17,25 +18,50 @@ script = ExtResource("1_yn1ki")
 [node name="card" type="Sprite2D" parent="."]
 clip_children = 2
 texture = ExtResource("2_63gtx")
-hframes = 9
+hframes = 2
 
 [node name="Button" type="Button" parent="card"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -24.0
-offset_top = -32.0
-offset_right = -24.0
-offset_bottom = -32.0
+offset_left = -200.0
+offset_top = -300.0
+offset_right = -200.0
+offset_bottom = -300.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_63gtx")
 theme_override_styles/hover = SubResource("StyleBoxFlat_63gtx")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_6xi4k")
 
-[node name="fruit" type="Sprite2D" parent="."]
+[node name="symbol" type="Sprite2D" parent="."]
 texture = ExtResource("3_63gtx")
-hframes = 5
-vframes = 3
+hframes = 18
+
+[node name="stickers" type="Node2D" parent="."]
+
+[node name="sticker1" type="Sprite2D" parent="stickers"]
+visible = false
+position = Vector2(-12, -20)
+texture = ExtResource("4_6xi4k")
+hframes = 10
+
+[node name="sticker2" type="Sprite2D" parent="stickers"]
+visible = false
+position = Vector2(12, -20)
+texture = ExtResource("4_6xi4k")
+hframes = 10
+
+[node name="sticker3" type="Sprite2D" parent="stickers"]
+visible = false
+position = Vector2(-12, 20)
+texture = ExtResource("4_6xi4k")
+hframes = 10
+
+[node name="sticker4" type="Sprite2D" parent="stickers"]
+visible = false
+position = Vector2(12, 20)
+texture = ExtResource("4_6xi4k")
+hframes = 10
 
 [connection signal="button_down" from="card/Button" to="." method="cardClicked"]

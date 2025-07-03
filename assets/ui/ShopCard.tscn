@@ -1,0 +1,128 @@
+[gd_scene load_steps=6 format=3 uid="uid://nqmt2ghdge03"]
+
+[ext_resource type="Texture2D" uid="uid://dno10iet0bqlu" path="res://src/sprites/cards.png" id="1_bjxcb"]
+[ext_resource type="Script" uid="uid://b4irg7trfsx6d" path="res://scripts/shop_card.gd" id="1_nc7e1"]
+[ext_resource type="Texture2D" uid="uid://bcm2f3vrm3ehv" path="res://src/sprites/symbols.png" id="2_nc7e1"]
+[ext_resource type="Texture2D" uid="uid://c5mp81vje0rd6" path="res://src/sprites/stickers.png" id="3_q7a11"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nc7e1"]
+font_size = 10
+
+[node name="ShopCard" type="Panel"]
+custom_minimum_size = Vector2(100, 200)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -100.0
+offset_right = 50.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nc7e1")
+
+[node name="vbox" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(80, 180)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.5
+offset_top = -21.5
+offset_right = 26.5
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="title" type="Label" parent="vbox"]
+layout_mode = 2
+text = "title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="items0" type="Panel" parent="vbox"]
+visible = false
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="card1" type="Sprite2D" parent="vbox/items0"]
+position = Vector2(54, 34)
+texture = ExtResource("1_bjxcb")
+hframes = 9
+
+[node name="fruit" type="Sprite2D" parent="vbox/items0/card1"]
+texture = ExtResource("2_nc7e1")
+hframes = 32
+
+[node name="card2" type="Sprite2D" parent="vbox/items0"]
+position = Vector2(27, 45)
+texture = ExtResource("1_bjxcb")
+hframes = 9
+
+[node name="fruit" type="Sprite2D" parent="vbox/items0/card2"]
+texture = ExtResource("2_nc7e1")
+hframes = 32
+
+[node name="items1" type="Panel" parent="vbox"]
+visible = false
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="card" type="Sprite2D" parent="vbox/items1"]
+position = Vector2(40, 40)
+texture = ExtResource("1_bjxcb")
+hframes = 9
+
+[node name="fruit" type="Sprite2D" parent="vbox/items1/card"]
+texture = ExtResource("2_nc7e1")
+hframes = 32
+
+[node name="items2" type="Panel" parent="vbox"]
+visible = false
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="sticker" type="Sprite2D" parent="vbox/items2"]
+position = Vector2(40, 40)
+texture = ExtResource("3_q7a11")
+hframes = 10
+
+[node name="items3" type="Panel" parent="vbox"]
+visible = false
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="sticker1" type="Sprite2D" parent="vbox/items3"]
+position = Vector2(54, 34)
+texture = ExtResource("3_q7a11")
+hframes = 10
+
+[node name="sticker2" type="Sprite2D" parent="vbox/items3"]
+position = Vector2(27, 45)
+texture = ExtResource("3_q7a11")
+hframes = 10
+
+[node name="desc" type="Label" parent="vbox"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "caption"
+label_settings = SubResource("LabelSettings_nc7e1")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="select" type="Button" parent="vbox"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "select"
+
+[connection signal="button_down" from="vbox/select" to="." method="selected"]

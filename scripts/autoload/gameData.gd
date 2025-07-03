@@ -6,8 +6,17 @@ var deckColor := 0
 @onready var cardObject := preload("res://assets/objects/Card.tscn")
 
 func _ready() -> void:
-	deckColor = randi_range(0,7)
-	for i in 36:
-		var c = cardObject.instantiate()
-		c.value = randi_range(0,12)
-		deck.append(c)
+	deckColor = 0 #randi_range(0,1)
+	for i in 4:
+		var c = randi_range(0,17)
+		deck.append([c,[]])
+		deck.append([c,[]])
+
+func getDeckCards(used := true) -> Array:
+	var nums := [] if used else range(0,17)
+	for card in deck:
+		if used:
+			nums.append(card[0])
+		else:
+			if nums.find(card[0]): nums.erase(card[0])
+	return nums
